@@ -42,7 +42,7 @@ class CategoriaController extends Controller
     public function store(CategoriaFormRequest $request)
     {
         $categoria = new Categoria;
-        $categoria->categoria = $request->get('descripcion'); // Cambié 'Categoria' a 'categoria'
+        $categoria->categoria = $request->get('categoria');
         $categoria->save();
         return Redirect::to('almacen/categoria');
     }
@@ -69,7 +69,7 @@ class CategoriaController extends Controller
     public function update(CategoriaFormRequest $request, $id)
     {
         $categoria = Categoria::findOrFail($id);
-        $categoria->categoria = $request->get('descripcion'); // Cambié 'Categoria' a 'categoria'
+        $categoria->categoria = $request->get('categoria'); // Cambié 'Categoria' a 'categoria'
         $categoria->save();
         return Redirect::to('almacen/categoria');
     }
